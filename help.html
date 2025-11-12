@@ -2,10 +2,66 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>常用链接助手使用方法</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="layui/css/layui.css" media="all"/>
 	</head>
 	<body>
-		正在建设帮助文档
+		<div class="layui-container" style="margin: 20px auto;;">
+			
+			<div class="layui-row">
+				<div class="layui-col-sm9 layui-col-sm-offset1">
+					<div class="gdc-tx-photo" id="imgDragmove">
+						<a href="#" ><img src="img/1.PNG" height="481" alt="说明首页"></a>
+						<blockquote class="layui-elem-quote" style="margin: 5px 0 5px;">
+						  ●新增链接(🔍点击图片可放大查看)
+						</blockquote>
+						<a href="#"><img src="img/2.PNG" height="481" alt="新建链接"></a>
+						<blockquote class="layui-elem-quote" style="margin: 5px 0 5px;">
+						  ●编辑、删除链接(🔍点击图片可放大查看)
+						</blockquote>
+						<a href="#"><img src="img/3.PNG" height="481" alt="编辑、删除链接"></a>
+						<blockquote class="layui-elem-quote" style="margin: 5px 0 5px;">
+						  ●导出、导入链接数据进行备份与恢复(🔍点击图片可放大查看)
+						</blockquote>
+						<a href="#"><img src="img/4.PNG" height="481" alt="新建链接"></a>
+						<blockquote class="layui-elem-quote" style="margin: 5px 0 5px;">
+						  ●图标位置调整(🔍点击图片可放大查看)
+						</blockquote>
+						<a href="#"><img src="img/5.PNG" height="481" alt="新建链接"></a>
+					</div>
+				</div>
+			</div>
+		
+			<!-- <div style="padding: 50px;">
+				<div class="gdc-tx-photo" id="imgDragmove">
+					<img src="img/1.PNG" height="400" alt="图片名">
+					<img src="img/2.PNG" height="400" alt="图片名">
+				</div>
+			</div> -->
+		</div>
+		<script src="layui_exts/dragMove/dragMove.js"></script>
+		<script src="layui/layui.js"></script>
+		<script>
+			layui.config({
+				base: 'layui_exts/' //配置 layui 第三方扩展组件存放的基础目录
+			}).extend({
+				dragMove: 'dragMove/dragMove'
+			}).use(['dragMove'], function() {
+				var dragMove = layui.dragMove;
+
+				//执行示例
+				dragMove.render({
+					elem: "#imgDragmove", //指向图片的父容器
+					layerArea: ["1200px", "860px"], //弹窗的宽高，同layer的area，默认["960px","720px"]
+					layerShade: 0.6, //遮罩的透明度，同layer的shade，默认0.6
+					layerMove: false, //触发拖动的元素，同layer的move，这里默认禁止，可设置为'.layui-layer-title'
+					maxZoom: 3 //图片能放大的最大倍数，默认1倍
+				});
+			});
+		</script>
 	</body>
 </html>
-
